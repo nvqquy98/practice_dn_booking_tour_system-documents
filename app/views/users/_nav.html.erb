@@ -1,0 +1,46 @@
+ <aside class="menu-sidebar  d-none d-lg-block">
+   <div class="menu-sidebar__content js-scrollbar1">
+     <nav class="navbar-sidebar">
+       <ul class="list-unstyled navbar__list">
+         <li class="has-sub text-center user-name">
+           <%= image_tag  "avatar/1.png" %>
+           <h5> <%= @user.name %> </h5>
+           <h6> <%= @user.email %> </h6>
+         </li>
+         <li class="item-nav-user active">
+           <%= link_to root_path do %>
+           <i class="fa fa-user-o"></i>
+           <span>Profile</span>
+           <% end %>
+         </li>
+         <li class="item-nav-user">
+           <%= link_to root_path do %>
+           <i class="fa fa-bed"></i>
+           <span>Booking</span>
+           <% end %>
+         </li>
+         <li class="item-nav-user">
+           <%= link_to root_path do %>
+           <i class="fa fa-newspaper-o"></i>
+           <span>Blog</span>
+           <% end %>
+         </li>
+         <li>
+           <div class="dropdown-divider"></div>
+         </li>
+         <li class="item-nav-user">
+           <%= link_to root_path do %>
+           <i class="fa fa-envelope" aria-hidden="true"></i>
+           <span>Messages</span>
+           <% end %>
+         </li>
+         <li class="item-nav-user">
+           <%= link_to root_path do %>
+           <i class="fa fa-bell" aria-hidden="true"></i>
+           <span>Notification</span>
+           <% end %>
+         </li>
+       </ul>
+     </nav>
+   </div>
+ </aside>

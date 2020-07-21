@@ -1,0 +1,54 @@
+<% provide :title, "Manager Tour " %>
+<div class="row">
+  <div class="col-lg">
+    <h2 class="title-1 m-b-25">Tour Manager</h2>
+    <div class="table-responsive table--no-card m-b-40">
+      <div class="just-item-center text-center">
+        <%= will_paginate %>
+      </div>
+      <table class="table table-borderless table-striped table-earning">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>City</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Area</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tours.each do |tour| %>
+          <tr>
+            <td><%= tour.title %></td>
+            <td><%= tour.category.city %></td>
+            <td class="text-right"><%= tour.price %> $</td>
+            <td class="text-right"><%= tour.category.area %></td>
+            <td>
+              <div class="table-data-feature">
+                <%= link_to  tour do %>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="Details">
+                  <i class="zmdi zmdi-assignment"></i>
+                </button>
+                <% end %>
+                <%= link_to edit_admin_tour_path(tour) do %>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                  <i class="zmdi zmdi-edit"></i>
+                </button>
+                <% end %>
+                <%= link_to admin_tour_path(tour), method: :delete, data: {confirm: " Are You Sure !" } do %>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                  <i class="zmdi zmdi-delete"></i>
+                </button>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="just-item-center text-center">
+        <%= will_paginate %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<% provide :title, "Manager User " %>
+<div class="row">
+  <div class="col-lg">
+    <h2 class="title-1 m-b-25">User Manager</h2>
+    <div class="table-responsive table--no-card m-b-40">
+      <div class="just-item-center text-center">
+        <%= will_paginate %>
+      </div>
+      <table class="table table-borderless table-striped table-earning">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th class="text-right">Phone Number</th>
+            <th class="text-right"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.address %></td>
+            <td class="text-right"><%= user.phone_number %></td>
+            <td>
+              <div class="table-data-feature">
+                <%= link_to  user do %>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="Details">
+                  <i class="zmdi zmdi-assignment"></i>
+                </button>
+                <% end %>
+                <%= link_to edit_admin_user_path(user) do %>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                  <i class="zmdi zmdi-edit"></i>
+                </button>
+                <% end %>
+                <%= link_to admin_user_path(user), method: :delete, data: {confirm: " Are You Sure !" } do %>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                  <i class="zmdi zmdi-delete"></i>
+                </button>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="just-item-center text-center">
+        <%= will_paginate %>
+      </div>
+    </div>
+  </div>
+</div>
