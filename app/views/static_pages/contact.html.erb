@@ -1,0 +1,20 @@
+<% provide :title_slide, "Contact" %>
+<% provide :content_slide, "Contact page"%>
+<% provide :image_slide, "bradcam_bg_4"%>
+<%= render  "shared/slide" %>
+<section class="contact-section">
+  <div class="container">
+    <%= render  "static_pages/contact/map" %>
+    <div class="row">
+      <div class="col-12">
+        <h2 class="contact-title">Get in Touch</h2>
+      </div>
+      <div class="col-lg-8">
+        <%= render  "static_pages/contact/form" %>
+      </div>
+      <div class="col-lg-3 offset-lg-1">
+        <%= render "static_pages/contact/address" %>
+      </div>
+    </div>
+  </div>
+</section>

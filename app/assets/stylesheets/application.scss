@@ -10,6 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap.min
+ *= require owl.carousel.min
+ *= require magnific-popup
+ *= require font-awesome.min
+ *= require themify-icons
+ *= require nice-select
+ *= require flaticon
+ *= require gijgo
+ *= require animate
+ *= require slick
+ *= require slicknav
+ *= require jquery-ui
+ *= require style
  *= require_tree .
  *= require_self
- */
+*/
