@@ -20,10 +20,10 @@ pickle-email-*.html
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
 config/master.key
-
+config/database.yml
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
-
+.vscode/
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
 .env
@@ -65,3 +65,17 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
